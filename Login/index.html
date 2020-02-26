@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="JavaScript/popups.js">
+    <title>Index</title>
+</head>
+<body background="images/backgroundSite.jpg">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4b0082">
+    <a class="navbar-brand" href="#">
+        <img src="images/free_horizontal_on_white_by_logaster__1_-removebg-preview-removebg-preview.png" height="50" width=""/></a>
+
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link text-white" href="#" onclick="document.getElementById('popupDescritiva').style.display='block'">Descritiva</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" onclick="document.getElementById('popupProbabilidadeEscolha').style.display='block'">Probabilidade</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" onclick="document.getElementById('popupCorrelacao').style.display='block'">Correlação</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Sobre nós</a>
+            </li>
+        </ul>
+    </div>
+    <div id="popupDescritiva"><button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupDescritiva').style.display='none'">
+        <span aria-hidden="true">&times;</span>
+    </button><span class="txtDescritiva titulos text-uppercase">Estatística Descritiva</span>
+       <div>
+            <input class="nomeVariavelInp" placeholder="Nome da Variável" size="50">
+            <input class="dadosInp" placeholder="Digite os dados separados por ';'" size="50">
+       </div>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="bntPopAmo btn btn-secondary active">
+                    <input type="radio" name="options" id="option1"> População
+                </label>
+                <label class="bntPopAmo btn btn-secondary">
+                    <input type="radio" name="options" id="option2"> Amostra
+                </label>
+            </div>
+        <div class="calculate">
+            <button class="btn btn-primary" type="submit">Calcular</button>
+        </div>
+    </div>
+    <div id="popupProbabilidadeEscolha"><button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeEscolha').style.display='none'">
+        <span aria-hidden="true">&times;</span>
+    </button><span class="txtProbabilidade titulos text-uppercase">Probabilidade</span>
+        <div class="botoesProb">
+        <button type="button" class="btn btn-primary">Uniforme</button>
+        <button type="button" class="btn btn-primary">Binomial</button>
+        <button type="button" class="btn btn-primary">Normal</button>
+        </div>
+        </div>
+    <div id="popupCorrelacao"><button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupCorrelacao').style.display='none'">
+        <span aria-hidden="true">&times;</span>
+    </button><span class="txtCorrelacao titulos text-uppercase">Correlação</span>
+        <div>
+            <input class="nomeVariavelInp" placeholder="Insira os valores de X separados por ';'" size="50">
+            <input class="dadosInp" placeholder="Insira os valores de Y separados por ';'" size="50">
+        </div>
+        <div class="calculate">
+            <button class="btn btn-primary" type="submit">Calcular</button>
+        </div>
+    </div>
+
+</nav>
+</body>
+</html>
