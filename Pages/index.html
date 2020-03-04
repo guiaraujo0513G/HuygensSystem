@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="JavaScript/popups.js"></script>
+    <script src="JavaScript/inputs.js"></script>
+    <script src="JavaScript/calculos.js"></script>
+    <title>Index</title>
+</head>
+<body background="images/backgroundSite.jpg">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4b0082">
+    <a class="navbar-brand" href="#">
+        <img src="images/free_horizontal_on_white_by_logaster__1_-removebg-preview-removebg-preview.png" height="50" width=""/>
+    </a>
+
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link text-white" href="#" onclick="abrirDescritiva()">Descritiva</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" onclick="abrirProbabilidadeEscolha()">Probabilidade</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" onclick="abrirCorrelacao()">Correlação</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="aboutUs.html">Sobre nós</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <!--Fim do cabeçalho-->
+
+    <!--Popups-->
+<!--Descritiva-->
+    <div id="popupDescritiva">
+        <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupDescritiva').style.display='none'; document.getElementById('tabela-descritiva').style.display='none'">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="txtDescritiva titulos text-uppercase">Estatística Descritiva</span>
+       <div>
+            <input class="nomeVariavelInp" placeholder="Nome da Variável" size="50">
+            <input class="dadosInp" placeholder="Digite os dados separados por ';'" size="50">
+           <select>
+               <option>Selecione</option>
+               <option>Nominal</option>
+               <option>Ordinal</option>
+               <option>Discreta</option>
+               <option>Contínua</option>
+           </select>
+       </div>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="bntPopAmo btn btn-secondary active">
+                    <input type="radio" name="options" id="option1"> População
+                </label>
+                <label class="bntPopAmo btn btn-secondary">
+                    <input type="radio" name="options" id="option2"> Amostra
+                </label>
+            </div>
+        <div class="calculate">
+            <button class="btn btn-primary" type="submit" onclick="abrirTbDescritiva()">Calcular</button>
+        </div>
+        <!--Seleção oculta(Separatriz)-->
+        <div id="medida-separatriz">
+            <span class="subtitulos" style="display: block">Medidas Separatrizes</span>
+            <select id="selectSeparatriz" style="width: 90px;" onchange="separatrizSelect()">
+                <option value="0">Selecione</option>
+                <option value="4">Quartil</option>
+                <option value="5">Quintil</option>
+                <option value="10">Decil</option>
+                <option value="100">Porcentil</option>
+            </select>
+            <div id="ranges-position">
+            <input id="rg4" type="range" min="25" max="100" step="25" style="display: none">
+            <input id="rg5" type="range" min="20" max="100" step="20" style="display: none">
+            <input id="rg10" type="range" min="10" max="100" step="10" style="display: none">
+            <input id="rg100" type="range" min="1" max="100" step="1"   style="display: none">
+            </div>
+        </div>
+        <!--Fim Seleção oculta(Separatriz)-->
+    </div>
+    <!--Tabela Oculta(Descritiva)-->
+    <div id="tabela-descritiva">
+        <table class="table table-sm table-light">
+            <thead>
+            <tr>
+                <th scope="col">(Nome variavel)</th>
+                <th scope="col">fi</th>
+                <th scope="col">fR%</th>
+                <th scope="col">Fac</th>
+                <th scope="col">Fac%</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>(variavel)</td>
+                <td>1</td>
+                <td>25%</td>
+                <td>1</td>
+                <td>0%</td>
+            </tr>
+            <tr>
+                <td>(variavel)</td>
+                <td>1</td>
+                <td>25%</td>
+                <td>1</td>
+                <td>0%</td>
+            </tr>
+            <tr>
+                <td>(variavel)</td>
+                <td>1</td>
+                <td>25%</td>
+                <td>1</td>
+                <td>0%</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-light">
+            <thead>
+            <tr>
+                <th scope="col">Moda</th>
+                <th scope="col">Média</th>
+                <th scope="col">Mediana</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-light">
+            <thead>
+            <tr>
+                <th scope="col">Desvio Padrão</th>
+                <th scope="col">Coeficente de Variação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>0</td>
+                <td>0%</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--Fim Tabela Oculta(Descritiva)-->
+<!--Fim Descritiva-->
+    <!--Probabilidade-->
+    <div id="popupProbabilidadeEscolha">
+        <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeEscolha').style.display='none'">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="txtProbabilidade titulos text-uppercase">Probabilidade</span>
+        <div class="botoesProb">
+            <button type="button" class="btn btn-primary" onclick="abrirProbabilidadeUniforme()">Uniforme</button>
+            <button type="button" class="btn btn-primary" onclick="abrirProbabilidadeBinomial()">Binomial</button>
+            <button type="button" class="btn btn-primary" onclick="abrirProbabilidadeNormal()">Normal</button>
+        </div>
+    </div>
+    <div id="popupProbabilidadeUniforme">
+        <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeUniforme').style.display='none'">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="txtUniforme titulos text-uppercase">Uniforme</span>
+        <div>
+            <input class="pontoMinInp" placeholder="Ponto mínimo" size="50">
+            <input class="pontoMaxInp" placeholder="Ponto máximo" size="50">
+            <select class="custom-select" style="width: 110px;height: 40px">
+                <option selected>Escolha...</option>
+                <option value="1" onclick="abrirValor1()">Menor que</option>
+                <option value="2">Entre</option>
+                <option value="3">Maior que</option>
+            </select>
+            <input class="menorQ-Probabilidade">
+            <input class="inicial-Probabilidade"><input class="final-Probabilidade">
+            <input class="valor-Propabilidade">
+        </div>
+        <button class="btn btn-primary" type="submit">Calcular</button>
+    </div>
+    <div id="popupProbabilidadeBinomial">
+        <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeBinomial').style.display='none'">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="txtBinomial titulos text-uppercase">Binomial</span>
+        <input class="QtdeAmostra" placeholder="Quantidade da amostra (n):" size="50">
+        <input class="txSucesso" placeholder="Taxa de Sucesso (q):" size="22">
+        <input class="txFracasso" placeholder="Taxa de Fracasso (q):" size="22">
+        <input class="txEventos" placeholder="Insira os Eventos separados por ';'" size="50">
+        <button type="button" class="btn btn-primary">Calcular</button>
+    </div>
+    <div id="popupProbabilidadeNormal">
+        <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupProbabilidadeNormal').style.display='none'">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="txtNormal titulos text-uppercase">Normal</span>
+        <div>
+            <input class="mediaInp" placeholder="Média" size="50">
+            <input class="desvioInp" placeholder="Desvio Padrão" size="50">
+            <select class="custom-select" style="width: 110px;height: 40px">
+                <option selected>Escolha...</option>
+                <option value="1">Menor que</option>
+                <option value="2">Entre</option>
+                <option value="3">Maior que</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Calcular</button>
+        </div>
+    </div>
+    <!--Fim Probabilidade-->
+    <!--Correlação-->
+    <div id="popupCorrelacao">
+        <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupCorrelacao').style.display='none'">
+            <span aria-hidden="true">&times;</span>
+        </button><span class="txtCorrelacao titulos text-uppercase">Correlação</span>
+        <div>
+            <input class="nomeVariavelInp" placeholder="Insira os valores de X separados por ';'" size="50">
+            <input class="dadosInp" placeholder="Insira os valores de Y separados por ';'" size="50">
+        </div>
+        <div class="calculate">
+            <button class="btn btn-primary" type="submit">Calcular</button>
+        </div>
+    </div>
+    <!--Fim Correlação-->
+</body>
+</html>
