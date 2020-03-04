@@ -7,6 +7,9 @@
     <script src="JavaScript/popups.js"></script>
     <script src="JavaScript/inputs.js"></script>
     <script src="JavaScript/calculos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <title>Index</title>
 </head>
 <body background="images/backgroundSite.jpg">
@@ -14,8 +17,10 @@
     <a class="navbar-brand" href="#">
         <img src="images/free_horizontal_on_white_by_logaster__1_-removebg-preview-removebg-preview.png" height="50" width=""/>
     </a>
-
-    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
                 <a class="nav-link text-white" href="#" onclick="abrirDescritiva()">Descritiva</a>
@@ -44,16 +49,16 @@
        <div>
             <input class="nomeVariavelInp" placeholder="Nome da Variável" size="50">
             <input class="dadosInp" placeholder="Digite os dados separados por ';'" size="50">
-           <select>
-               <option>Selecione</option>
-               <option>Nominal</option>
-               <option>Ordinal</option>
-               <option>Discreta</option>
-               <option>Contínua</option>
+           <select class="custom-select my-1 mr-sm-2" style="width: 200px">
+               <option value="0">Selecione</option>
+               <option value="nominal">Nominal</option>
+               <option value="ordinal">Ordinal</option>
+               <option value="discreta">Discreta</option>
+               <option value="continua">Contínua</option>
            </select>
        </div>
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="bntPopAmo btn btn-secondary active">
+                <label class="bntPopAmo btn btn-secondary">
                     <input type="radio" name="options" id="option1"> População
                 </label>
                 <label class="bntPopAmo btn btn-secondary">
@@ -66,18 +71,18 @@
         <!--Seleção oculta(Separatriz)-->
         <div id="medida-separatriz">
             <span class="subtitulos" style="display: block">Medidas Separatrizes</span>
-            <select id="selectSeparatriz" style="width: 90px;" onchange="separatrizSelect()">
-                <option value="0">Selecione</option>
-                <option value="4">Quartil</option>
+            <select class="custom-select my-1 mr-sm-2" id="selectSeparatriz"  style="width: 200px;" onchange="separatrizSelect()">
+                <option value="0" selected>Selecione</option>
+                <option value="4" onclick="um()">Quartil</option>
                 <option value="5">Quintil</option>
                 <option value="10">Decil</option>
                 <option value="100">Porcentil</option>
             </select>
             <div id="ranges-position">
-            <input id="rg4" type="range" min="25" max="100" step="25" style="display: none">
-            <input id="rg5" type="range" min="20" max="100" step="20" style="display: none">
-            <input id="rg10" type="range" min="10" max="100" step="10" style="display: none">
-            <input id="rg100" type="range" min="1" max="100" step="1"   style="display: none">
+            <input class="slider" id="rg4" type="range" min="25" max="100" step="25" style="display: none ">
+            <input class="slider" id="rg5" type="range" min="20" max="100" step="20" style="display: none">
+            <input class="slider" id="rg10" type="range" min="10" max="100" step="10" style="display: none">
+            <input class="slider" id="rg100" type="range" min="1" max="100" step="1"   style="display: none">
             </div>
         </div>
         <!--Fim Seleção oculta(Separatriz)-->
