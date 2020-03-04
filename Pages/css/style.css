@@ -90,28 +90,24 @@
     border-radius: 20px;
     box-shadow: rgba(0,0,0,0.7) 2px 2px;
     display: none;
-    position: absolute;
+    position: relative;
     z-index: 100;
-    height: 100px;
-    width: 400px;
+    height: auto;
+    width: 350px;
     text-align: center;
-    top: 200px;
-    right: 450px;
-    left: 450px;
+    margin: 200px auto;
 }
 #popupProbabilidadeUniforme{
     background-color: white;
     border-radius: 20px;
     box-shadow: rgba(0,0,0,0.7) 2px 2px;
     display: none;
-    position: absolute;
+    position: relative;
     z-index: 100;
     height: 350px;
     width: 400px;
     text-align: center;
-    top: 200px;
-    right: 450px;
-    left: 450px;
+    margin: 100px auto;
 }
 .menorQ-Probabilidade{
     display: none;
@@ -145,14 +141,12 @@
     border-radius: 20px;
     box-shadow: rgba(0,0,0,0.7) 2px 2px;
     display: none;
-    position: absolute;
+    position: relative;
     z-index: 100;
-    height: 350px;
+    height: auto;
     width: 400px;
     text-align: center;
-    top: 200px;
-    right: 450px;
-    left: 450px;
+    margin: 100px auto;
 }
 .QtdeAmostra{
     border-radius: 10px;
@@ -188,14 +182,12 @@
     border-radius: 20px;
     box-shadow: rgba(0,0,0,0.7) 2px 2px;
     display: none;
-    position: absolute;
+    position: relative;
     z-index: 100;
-    height: 350px;
+    height: auto;
     width: 400px;
     text-align: center;
-    top: 200px;
-    right: 450px;
-    left: 450px;
+    margin: 100px auto;
 }
 .botoesProb{
     display: block;
@@ -204,14 +196,12 @@
 #popupCorrelacao{
     background-color: white;
     border-radius: 20px;
-    display: none;
-    position: absolute;
-    z-index: 100;
-    height: 350px;
-    width: 500px;
-    top: 100px;
-    text-align: center;
-    right: 450px;
-    left: 450px;
     box-shadow: rgba(0,0,0,0.7) 2px 2px;
+    display: none;
+    position: relative;
+    z-index: 100;
+    height: auto;
+    width: 500px;
+    text-align: center;
+    margin: 100px auto;
 }
