@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="JavaScript/popups.js"></script>
-    <script src="JavaScript/inputs.js"></script>
-    <script src="JavaScript/calculos.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <title>Index</title>
+    <script src="JavaScript/popups.js"></script>
+    <script src="JavaScript/inputs.js"></script>
+    <script src="JavaScript/calculos.js"></script>
+   <title>Index</title>
 </head>
 <body background="images/backgroundSite.jpg">
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4b0082">
@@ -47,9 +47,9 @@
         </button>
         <span class="txtDescritiva titulos text-uppercase">Estatística Descritiva</span>
        <div>
-            <input class="nomeVariavelInp" placeholder="Nome da Variável" size="50">
-            <input class="dadosInp" placeholder="Digite os dados separados por ';'" size="50">
-           <select class="custom-select my-1 mr-sm-2" style="width: 200px">
+            <input class="nomeVariavelInp" placeholder="Nome da Variável" size="50" name="nomeVariavel">
+            <input class="dadosInp" placeholder="Digite os dados separados por ';'" size="50" name="dadosInp">
+           <select name="ordemVariavel" class="custom-select my-1 mr-sm-2" style="width: 200px">
                <option value="0">Selecione</option>
                <option value="nominal">Nominal</option>
                <option value="ordinal">Ordinal</option>
@@ -57,7 +57,7 @@
                <option value="continua">Contínua</option>
            </select>
        </div>
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <div id="options-group" class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="bntPopAmo btn btn-secondary">
                     <input type="radio" name="options" id="option1"> População
                 </label>
@@ -65,6 +65,14 @@
                     <input type="radio" name="options" id="option2"> Amostra
                 </label>
             </div>
+            <div class="row">
+                <div class="ml-auto mr-auto mt-2 col-6">
+                    <div class="form-group">
+                        <input id="margemErro" class="form-control invisible" placeholder="Margem de erro" type="number" min="1" max="5">
+                    </div>
+                </div>
+            </div>
+            
         <div class="calculate">
             <button class="btn btn-primary" type="submit" onclick="abrirTbDescritiva()">Calcular</button>
         </div>
