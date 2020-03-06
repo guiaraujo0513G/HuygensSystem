@@ -14,7 +14,7 @@ function abrirTbDescritiva() {
 
     // Caso amostra
     var nomeVariavel = $('input[name="nomeVariavel"]');
-    var populacao = $('input[name="dadosInp"][0]');
+    var populacao = $('input[name="dadosInp"]')[0];
     var populacaoArray = populacao.value.split(';');
 
     var ordemVariavel = $('input[name="ordemVariavel"]');
