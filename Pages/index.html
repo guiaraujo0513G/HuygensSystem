@@ -2,6 +2,7 @@
 <html lang="PT-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/icons/iconeIndex.png">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -66,7 +67,7 @@
                 </label>
             </div>
             <div class="row">
-                <div class="ml-auto mr-auto mt-2 col-6">
+                <div class="ml-auto mr-auto col-6">
                     <div class="form-group">
                         <input id="margemErro" class="form-control invisible" placeholder="Margem de erro" type="number" min="1" max="5">
                     </div>
@@ -74,7 +75,7 @@
             </div>
             
         <div class="calculate">
-            <button class="btn btn-primary" type="submit" onclick="abrirTbDescritiva()">Calcular</button>
+            <a href="#scrolling"><button class="btn btn-primary" type="submit" onclick="abrirTbDescritiva()">Calcular</button></a>
         </div>
         <!--Seleção oculta(Separatriz)-->
         <div id="medida-separatriz">
@@ -97,7 +98,7 @@
     </div>
     <!--Tabela Oculta(Descritiva)-->
     <div id="tabela-descritiva">
-        <table class="table table-sm table-light">
+        <table id="scrolling" class="table table-sm table-light">
             <thead>
             <tr>
                 <th scope="col">(Nome variavel)</th>

@@ -11,7 +11,6 @@ $(document).ready(function () {
 })
 
 function abrirTbDescritiva() {
-
     // Caso amostra
     var nomeVariavel = $('input[name="nomeVariavel"]');
     var populacao = $('input[name="dadosInp"]')[0];
