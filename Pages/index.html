@@ -11,6 +11,7 @@
     <script src="JavaScript/popups.js"></script>
     <script src="JavaScript/inputs.js"></script>
     <script src="JavaScript/calculos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
    <title>Index</title>
 </head>
 <body background="images/backgroundSite.jpg">
@@ -41,7 +42,7 @@
     <!--Fim do cabeçalho-->
 
     <!--Popups-->
-<!--Descritiva-->
+    <!--Descritiva-->
     <div id="popupDescritiva">
         <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupDescritiva').style.display='none'; document.getElementById('tabela-descritiva').style.display='none'">
             <span aria-hidden="true">&times;</span>
@@ -75,7 +76,7 @@
             </div>
             <div id="ordernarInputs"></div>
             
-        <div class="calculate">
+        <div id="calculate" class="calculate">
             <a href="#scrolling"><button class="btn btn-primary" type="submit" onclick="abrirTbDescritiva()">Calcular</button></a>
         </div>
         <!--Seleção oculta(Separatriz)-->
@@ -163,6 +164,7 @@
             </tr>
             </tbody>
         </table>
+        <canvas id="myChart" style="background-color: white"></canvas>
     </div>
     <!--Fim Tabela Oculta(Descritiva)-->
 <!--Fim Descritiva-->
@@ -242,4 +244,5 @@
     </div>
     <!--Fim Correlação-->
 </body>
+<script src="JavaScript/tabelas.js"></script>
 </html>
