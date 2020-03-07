@@ -15,6 +15,32 @@ function abrirTbDescritiva() {
     var nomeVariavel = $('input[name="nomeVariavel"]');
     var populacao = $('input[name="dadosInp"]')[0];
     var populacaoArray = populacao.value.split(';');
+    var agrupamentos = {};
+    for(var i = 0;i < populacaoArray.length;i++) {
+        var grupo = populacaoArray[i];
+        if (typeof (agrupamentos[grupo]) === 'undefined') {
+            agrupamentos[grupo] = 1;
+        } else {
+            agrupamentos[grupo]++;
+        }
+    }
+    console.log(agrupamentos)
+    for(var chave in agrupamentos) {
+        if (chave.length > 0) {
+            let novaDiv = document.createElement('div');
+            novaDiv.setAttribute('class', 'form-group col-12');
+
+            let novoInput = document.createElement('input');
+            novoInput.setAttribute('class', 'form-control')
+            novoInput.setAttribute('placeholder', `Por favor digite a ordem do valor ${chave}`);
+            novoInput.setAttribute('max', Object.keys(agrupamentos).length);
+            novoInput.setAttribute('type', 'number');
+
+            novaDiv.appendChild(novoInput);
+
+            document.getElementById('ordernarInputs').appendChild(novaDiv);
+        }
+    }
 
     var ordemVariavel = $('input[name="ordemVariavel"]');
     var tipoVariavel = $('input[name="options"]:checked')[0];
