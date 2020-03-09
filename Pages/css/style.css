@@ -9,6 +9,9 @@ a{
 html{
     scroll-behavior: smooth;
 }
+body{
+    background-attachment: fixed;
+}
 .titulos{
     font-family: fonteTitulo;
     color: black;

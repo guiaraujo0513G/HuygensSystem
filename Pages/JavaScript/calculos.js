@@ -12,8 +12,9 @@ $(document).ready(function () {
 
 function abrirTbDescritiva() {
     // Caso amostra
-    var nomeVariavel = $('input[name="nomeVariavel"]');
+    var nomeVariavel = $('input[name="nomeVariavel"]').val();
     var populacao = $('input[name="dadosInp"]')[0];
+    document.getElementById('nomeVariavel').innerHTML = nomeVariavel
     var populacaoArray = populacao.value.split(';');
     var agrupamentos = {};
     for(var i = 0;i < populacaoArray.length;i++) {
@@ -24,7 +25,17 @@ function abrirTbDescritiva() {
             agrupamentos[grupo]++;
         }
     }
+    var FacDescritiva = 0
+    for ( var aux in agrupamentos) {
+        if (typeof acm === 'undefined'){
+        var acm = `<tr><td>${aux}</td><td>${agrupamentos[aux]}</td><td>25%</td><td>${FacDescritiva = FacDescritiva + agrupamentos[aux]}</td><td>0%</td></tr>`
+        }else{
+            var acm = acm + `<tr><td>${aux}</td><td>${agrupamentos[aux]}</td><td>25%</td><td>${FacDescritiva = FacDescritiva + agrupamentos[aux]}</td><td>0%</td></tr>`
+        document.getElementById('frequencia-descritiva').innerHTML = acm
+        }
+        }
     console.log(agrupamentos)
+
     for(var chave in agrupamentos) {
         if (chave.length > 0) {
             let novaDiv = document.createElement('div');
