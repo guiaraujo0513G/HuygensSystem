@@ -40,7 +40,7 @@
     <!--Fim do cabeçalho-->
 
     <!--Popups-->
-<!--Descritiva-->
+    <!--Descritiva-->
     <div id="popupDescritiva">
         <button type="button" class="close" aria-label="Fechar" onclick="document.getElementById('popupDescritiva').style.display='none'; document.getElementById('tabela-descritiva').style.display='none'">
             <span aria-hidden="true">&times;</span>
@@ -66,7 +66,7 @@
                 </label>
             </div>
             <div class="row">
-                <div class="ml-auto mr-auto mt-2 col-6">
+                <div class="ml-auto mr-auto col-6">
                     <div class="form-group">
                         <input id="margemErro" class="form-control invisible" placeholder="Margem de erro" type="number" min="1" max="5">
                     </div>
@@ -74,8 +74,8 @@
             </div>
             <div id="ordernarInputs"></div>
             
-        <div class="calculate">
-            <button class="btn btn-primary" type="submit" onclick="abrirTbDescritiva()">Calcular</button>
+        <div id="calculate" class="calculate">
+            <a href="#scrolling"><button class="btn btn-primary" type="submit" onclick="abrirTbDescritiva()">Calcular</button></a>
         </div>
         <!--Seleção oculta(Separatriz)-->
         <div id="medida-separatriz">
@@ -98,39 +98,17 @@
     </div>
     <!--Tabela Oculta(Descritiva)-->
     <div id="tabela-descritiva">
-        <table class="table table-sm table-light">
+        <table id="scrolling" class="table table-sm table-light">
             <thead>
             <tr>
-                <th scope="col">(Nome variavel)</th>
+                <th scope="col" id="nomeVariavel"></th>
                 <th scope="col">fi</th>
                 <th scope="col">fR%</th>
                 <th scope="col">Fac</th>
                 <th scope="col">Fac%</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td>(variavel)</td>
-                <td>1</td>
-                <td>25%</td>
-                <td>1</td>
-                <td>0%</td>
-            </tr>
-            <tr>
-                <td>(variavel)</td>
-                <td>1</td>
-                <td>25%</td>
-                <td>1</td>
-                <td>0%</td>
-            </tr>
-            <tr>
-                <td>(variavel)</td>
-                <td>1</td>
-                <td>25%</td>
-                <td>1</td>
-                <td>0%</td>
-            </tr>
-            </tbody>
+            <tbody id="frequencia-descritiva"></tbody>
         </table>
         <table class="table table-sm table-light">
             <thead>
@@ -162,6 +140,7 @@
             </tr>
             </tbody>
         </table>
+        <canvas id="myChart" style="background-color: white"></canvas>
     </div>
     <!--Fim Tabela Oculta(Descritiva)-->
 <!--Fim Descritiva-->
@@ -182,18 +161,18 @@
             <span aria-hidden="true">&times;</span>
         </button>
         <span class="txtUniforme titulos text-uppercase">Uniforme</span>
-        <div>
             <input class="pontoMinInp" placeholder="Ponto mínimo" size="50">
             <input class="pontoMaxInp" placeholder="Ponto máximo" size="50">
-            <select class="custom-select" style="width: 110px;height: 40px">
-                <option selected>Escolha...</option>
-                <option value="1" onclick="abrirValor1()">Menor que</option>
+        <div class="uniforme-alinhamento">
+            <select id="comparacaoUniforme" class="custom-select " onchange="abrirComparacao()" style="width: 110px;height: 40px;margin-bottom: 5px">
+                <option value="0">Escolha...</option>
+                <option value="1">Menor que</option>
                 <option value="2">Entre</option>
                 <option value="3">Maior que</option>
             </select>
-            <input class="menorQ-Probabilidade">
-            <input class="inicial-Probabilidade"><input class="final-Probabilidade">
-            <input class="valor-Propabilidade">
+            <input id="menorQ-Probabilidade" class="menorQ-Probabilidade" placeholder="Valor:" size="30">
+            <input id="inicial-Probabilidade" class="inicial-Probabilidade" placeholder="Valor Inicial:" size="13"><input id="final-Probabilidade" class="final-Probabilidade" placeholder="Valor Final:" size="12">
+            <input id="valor-Probabilidade" class="valor-Propabilidade" placeholder="Valor:" size="30">
         </div>
         <button class="btn btn-primary" type="submit">Calcular</button>
     </div>
@@ -216,12 +195,17 @@
         <div>
             <input class="mediaInp" placeholder="Média" size="50">
             <input class="desvioInp" placeholder="Desvio Padrão" size="50">
-            <select class="custom-select" style="width: 110px;height: 40px">
-                <option selected>Escolha...</option>
+            <div class="normal-alinhamento">
+            <select id="comparacaoNormal" class="custom-select" onchange="abrirComparacaoN()" style="width: 110px;height: 40px;margin-bottom: 5px">
+                <option value="0">Escolha...</option>
                 <option value="1">Menor que</option>
                 <option value="2">Entre</option>
                 <option value="3">Maior que</option>
             </select>
+                <input id="menorQ-ProbabilidadeN" class="menorQ-Probabilidade" placeholder="Valor:" size="30">
+                <input id="inicial-ProbabilidadeN" class="inicial-Probabilidade" placeholder="Valor Inicial:" size="13"><input id="final-ProbabilidadeN" class="final-Probabilidade" placeholder="Valor Final:" size="12">
+                <input id="valor-ProbabilidadeN" class="valor-Propabilidade" placeholder="Valor:" size="30">
+            </div>
             <button class="btn btn-primary" type="submit">Calcular</button>
         </div>
     </div>
@@ -241,4 +225,5 @@
     </div>
     <!--Fim Correlação-->
 </body>
+<script src="JavaScript/tabelas.js"></script>
 </html>
