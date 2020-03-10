@@ -10,7 +10,10 @@ html{
     scroll-behavior: smooth;
 }
 body{
+    background-image: url("../images/backgroundSite.jpg");
     background-attachment: fixed;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
 }
 .titulos{
     font-family: fonteTitulo;
